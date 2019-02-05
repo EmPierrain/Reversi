@@ -14,13 +14,13 @@ class StatsViewBean internal constructor(private val utilisateurs: Utilisateurs,
     private val utilisateur: Utilisateur
         get() = sessionUtilisation.utilisateur
 
-    val nombreCitationVuPourLaSessionEnCours: Int
+    val nombreGameJoueePourLaSessionEnCours: Int
         get() = sessionUtilisation.nombreDeCitationVue
 
-    val nombreCitationVuAuTotal: Int
+    val nombreGameJoueeAuTotal: Int
         get() = utilisateurs.nombreCitationVuAuTotal
 
-    val nombreDeCitationPourLUtilisateur: Int
+    val nombreDeGamePourLUtilisateur: Int
         get() = utilisateur.nombreCitationVue
 
 }

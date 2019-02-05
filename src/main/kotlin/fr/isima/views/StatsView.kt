@@ -12,7 +12,7 @@ fun StatsViewBean.toHtml() = partialDiv {
         classes += setOf("list-group")
         li {
             classes += setOf("list-group-item")
-            +"Nombre total de citation vue dans l'application : ${nombreCitationVuAuTotal}"
+            +"Nombre total de parties jouées : ${nombreGameJoueeAuTotal}"
         }
         li {
             classes += setOf("list-group-item")
@@ -20,11 +20,11 @@ fun StatsViewBean.toHtml() = partialDiv {
         }
         li {
             classes += setOf("list-group-item")
-            +"Nombre de citation pour l'utilisateur (toutes sessions confondus) : ${nombreDeCitationPourLUtilisateur}"
+            +"Nombre de game pour l'utilisateur (toutes sessions confondues) : ${nombreDeGamePourLUtilisateur}"
         }
         li {
             classes += setOf("list-group-item")
-            +"Nombre de citation pour la session en cours : ${nombreCitationVuPourLaSessionEnCours}"
+            +"Nombre de game pour la session en cours : ${nombreGameJoueePourLaSessionEnCours}"
         }
     }
 }

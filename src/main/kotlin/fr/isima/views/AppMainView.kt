@@ -21,7 +21,7 @@ fun IndexedQuote.toCompleteHtml() = html {
                             attributes["data-target"] = "#bs-example-navbar-collapse-1"
                             span {
                                 classes += setOf("sr-only")
-                                +"Toogle navigation"
+                                +"Toggle navigation"
                             }
                             span { classes += setOf("icon-bar") }
                             span { classes += setOf("icon-bar") }
@@ -29,7 +29,7 @@ fun IndexedQuote.toCompleteHtml() = html {
                         a {
                             classes += setOf("navbar-brand")
                             href = "#"
-                            +"Display-quote v3"
+                            +"Reversi"
                         }
                     }
                     div {
@@ -43,7 +43,7 @@ fun IndexedQuote.toCompleteHtml() = html {
                                     href = "#"
                                     id = "quote-link"
                                     classes += setOf("action-link")
-                                    +"Citations"
+                                    +"Game"
                                     span {
                                         classes += setOf("sr-only")
                                         +("selectionne")
@@ -56,7 +56,7 @@ fun IndexedQuote.toCompleteHtml() = html {
                                     href = "#"
                                     classes += setOf("action-link")
                                     attributes["alt"] = "/stats"
-                                    +"Statistiques"
+                                    +"Stats"
                                 }
                             }
                         }
@@ -65,7 +65,7 @@ fun IndexedQuote.toCompleteHtml() = html {
                             li {
                                 a {
                                     href = "login?logout"
-                                    +"logout"
+                                    +"Logout"
                                 }
                             }
                         }
