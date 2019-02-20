@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger
  *
  * @author Benjamin Kuchcik
  */
-open class Utilisateur(val pseudonyme: String, val quotes: IndexedQuotes, private val utilisateurs: Utilisateurs) {
+open class Utilisateur(val pseudonyme: String, private val utilisateurs: Utilisateurs) {
 
     private val sessionsUtilisations = CopyOnWriteArrayList<SessionUtilisation>()
     private val nombreTotalDeCitationEnregistree = AtomicInteger()

@@ -1,10 +1,10 @@
 package fr.isima.views
 
-import fr.isima.business.IndexedQuote
+import fr.isima.business.Game
 import kotlinx.html.*
 
 
-fun IndexedQuote.toCompleteHtml() = html {
+fun Game.toCompleteHtml() = html {
     head { imports() }
     body {
         div {
@@ -41,7 +41,7 @@ fun IndexedQuote.toCompleteHtml() = html {
                                 classes += setOf("active")
                                 a {
                                     href = "#"
-                                    id = "quote-link"
+                                    id = "game-link"
                                     classes += setOf("action-link")
                                     +"Game"
                                     span {
@@ -82,7 +82,7 @@ fun IndexedQuote.toCompleteHtml() = html {
             }
             input(type = InputType.hidden) {
                 id = "save-unquoted-url"
-                value = "/quotes/"
+                value = "/main/"
             }
             script {
                 type = "text/javascript"

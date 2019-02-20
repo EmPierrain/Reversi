@@ -26,7 +26,7 @@ open class UtilisateursConfiguration {
     @Bean
     @SessionScope
     @Autowired
-    open fun utilisateur(httpSession: HttpSession, quotes: IndexedQuotes): Utilisateur {
-        return Utilisateur(httpSession.getAttribute("username") as String, quotes, utilisateurs())
+    open fun utilisateur(httpSession: HttpSession): Utilisateur {
+        return Utilisateur(httpSession.getAttribute("username") as String, utilisateurs())
     }
 }

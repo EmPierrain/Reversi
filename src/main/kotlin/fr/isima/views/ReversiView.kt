@@ -1,67 +1,45 @@
 package fr.isima.views
 
-import fr.isima.business.Direction
-import fr.isima.business.IndexedQuote
+import fr.isima.business.Case
+import fr.isima.business.Game
+import fr.isima.business.Point
 import kotlinx.html.*
 
-fun IndexedQuote.toPartialHtml() = StringBuilder().partialDiv { toPartialHtml(this@toPartialHtml) }.toString()
+fun Game.toPartialHtml() = StringBuilder().partialDiv { toPartialHtml(this@toPartialHtml) }.toString()
 
-fun DIV.toPartialHtml(indexedQuote: IndexedQuote) = indexedQuote.apply {
+fun DIV.toPartialHtml(game: Game) = game.apply {
     div {
         classes = setOf("container")
         div {
-            classes = setOf("jumbotron")
-            h1 {
-                +"Citation "
-                span {
-                    id = "number"
-                    if (number > 0) {
-                        +"$number"
-                    }
-                }
-            }
-            p {
-                classes = setOf("lead")
-                style = "height: 150px"
-                span {
-                    id = "content"
-                    +"${quote.content} "
-                }
-                span {
-                    id = "author"
-                    style = "font-style: italic;"
-                    +quote.author
-                }
-            }
-            p {
+            table {
                 div {
-                    classes = setOf("btn-group")
-                    role = "group"
-                    for (direction in directions) {
-                        navigationButton { direction }
+                    classes += "grid-container"
+
+
+                    var grid = getGrid()
+                    for (i in 0..7) {
+                        for (j in 0..7) {
+                            div{
+                                classes += "tile"
+                                id = i.toString() + "_" + j.toString()
+                                if(grid[Point(i, j)] == Case.B){
+                                    classes += "black"
+                                }
+                                else if(grid[Point(i, j)] == Case.W){
+                                    classes += "white"
+                                }
+                                else{
+                                    classes += "neutral"
+                                }
+
+                                + grid[Point(i, j)].toString()
+
+                            }
+                        }
                     }
                 }
             }
-        }
-        script {
-            type = "text/javascript"
-            src = "/resources/js/quotes.js"
-        }
-    }
-}
 
-/**
- * An exemple of dsl usage to allow really tasty configuration !
- */
-private fun DIV.navigationButton(directionFn: () -> Direction) {
-    directionFn().apply {
-        button {
-            id = this@apply.id
-            type = ButtonType.button
-            classes += setOf("btn", "btn-lg", "btn-success", "direction-button")
-            attributes["data-enabled"] = "$enabled"
-            attributes["data-target-index"] = "$targetNumber"
-            +label
         }
     }
 }

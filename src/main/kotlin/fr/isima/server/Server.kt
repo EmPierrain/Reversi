@@ -1,7 +1,6 @@
 package fr.isima.server
 
 import fr.isima.business.allQuotes
-import fr.isima.business.toIndexedQuotes
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -22,8 +21,8 @@ fun main(args: Array<String>) {
 @ComponentScan("fr.isima")
 class Application {
 
-    @Bean
-    fun quotes() = allQuotes.toIndexedQuotes()
+    //@Bean
+    //fun quotes() = allQuotes.toIndexedQuotes()
 }
 
 @Configuration

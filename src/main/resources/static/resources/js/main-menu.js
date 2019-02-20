@@ -1,5 +1,5 @@
 $(function() {
-	$('#quote-link').on(
+	$('#game-link').on(
 			'click',
 			function() {
 				$(this).attr(
@@ -12,4 +12,15 @@ $(function() {
 		$('.nav > .active').removeClass('active');
 		$(this).parent().addClass('active');
 	});
+
+	$('.neutral').on(
+    			'click',
+    			function(event) {
+    				event.target.style.backgroundColor = 'white';
+                    $.post("/rest/gameUpdate",{
+                        caseId: event.target.id,
+                        player: "white"
+                    })
+    				alert(event.target.id);
+    			});
 });

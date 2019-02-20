@@ -29,6 +29,7 @@ buildscript {
 
 apply(plugin = "io.spring.dependency-management")
 apply(plugin = "kotlin-spring")
+apply(plugin = "java")
 
 repositories {
     jcenter()
