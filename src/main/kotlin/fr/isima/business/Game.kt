@@ -33,6 +33,15 @@ class Game private constructor(private val grid: MutableMap<Point, Case>) {
 
     }
 
+    fun updateGrid(p: Point, player: String) {
+        if(player == "white") {
+            grid[p] = Case.W
+        }
+        else {
+            grid[p] = Case.B
+        }
+    }
+
 }
 
 data class Point(val x: Int, val y: Int)

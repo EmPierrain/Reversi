@@ -17,10 +17,12 @@ $(function() {
     			'click',
     			function(event) {
     				event.target.style.backgroundColor = 'white';
-                    $.post("/rest/gameUpdate",{
+                    $.get("/rest/gameUpdate",{
                         caseId: event.target.id,
-                        player: "white"
+                        player: "white",
+                        gameId: "4"
                     })
     				alert(event.target.id);
-    			});
+    			})
+
 });
